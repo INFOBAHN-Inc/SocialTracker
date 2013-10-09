@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Social Tracker Test">
+    <meta name="author" content="s.ashikawa">
+    <title>Social Tracker Test</title>
+    <link rel="stylesheet" href="//kevinburke.bitbucket.org/markdowncss/markdown.css">
+</head>
+<body>
+	<div id="fb-root"></div>
+    <header>
+        <h1>Social Tracker Test</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#facebook-section">Facebook</a></li>
+                <li><a href="#twitter-section">Twitter</a></li>
+                <li><a href="#plusone-section">Plusone</a></li>
+            </ul>
+        </nav>
+    </header><!-- /header -->
+    
+    <section id="facebook-section">
+		<h2>Facebook</h2>
+		<p>
+			<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-action="like" data-show-faces="true" data-send="false"></div>
+		</p>
+		<p>
+			<div class="fb-comments" data-href="http://example.com/comments" data-numposts="5"></div>
+		</p>
+    </section><!-- /#facebook-section -->
+
+    <section id="twitter-section">
+		<h2>Twitter</h2>
+		<p>
+			<!-- URL なし -->
+			<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+		</p>
+
+		<p>
+			<a href="https://twitter.com/twitterapi" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @twitterapi</a>
+		</p>
+    </section><!-- /#twitter-section -->
+
+    <section id="plusone-section">
+		<h2>Plusone</h2>
+		<p>
+			<div class="g-plusone" data-annotation="inline" data-width="300" data-href="http://google.com/"></div>
+		</p>
+    </section><!-- /#plusone-section -->
+<script>
+// for over ride
+window.fbAsyncInit = function () {
+	console.log('init');
+}
+</script>
+<script src="./tracking.js"></script>
+</body>
+</html>

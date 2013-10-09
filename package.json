@@ -1,0 +1,11 @@
+{
+    "name": "SocialTracker",
+    "version": "1.0.0",
+    "devDependencies": {
+        "underscore": "*",
+        "grunt": "~0.4.0",
+        "grunt-contrib-watch": "*",
+        "grunt-contrib-concat": "*",
+        "grunt-closure-compiler": "*"
+    }
+}
