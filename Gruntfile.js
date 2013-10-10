@@ -13,7 +13,6 @@ module.exports = function (grunt) {
 
     _([
         'grunt-contrib-watch',
-        'grunt-contrib-concat',
         'grunt-closure-compiler'
     ]).each(function (element, index, list) {
         grunt.loadNpmTasks(element);
