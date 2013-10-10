@@ -32,13 +32,6 @@ module.exports = function (grunt) {
         }
     };
 
-    watchFiles    = {
-        less: {
-            files: '<%= basedir %>/src/*.js',
-            tasks: ['default']
-        }
-    };
-
     // jsFile => ClosureCompiler Setting
     closureConfig = {};
 
@@ -55,14 +48,12 @@ module.exports = function (grunt) {
     });
 
     // jsFiles => Watch File List
-    watchFiles = _(watchFiles).extend(
-        _(jsfiles).map(function (element, key, jsfiles) {
-            return {
-                files: element.js,
-                tasks: ['closure-compiler:' + key]
-            };
-        })
-    );
+    watchFiles = _(jsfiles).map(function (element, key, jsfiles) {
+        return {
+            files: element.js,
+            tasks: ['closure-compiler:' + key]
+        };
+    });
 
     config = {
         'basedir': basedir,
