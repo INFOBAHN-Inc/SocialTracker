@@ -3,10 +3,5 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-/** @define {string} */
-var SITE_DOMAIN = 'localhost.com';
-/** @define {string} */
-var TRACKING_ID = 'UA-XXXXXXXX-1';
-
-ga('create', TRACKING_ID, SITE_DOMAIN);
+ga('create', TRACKING_ID, ANALYTICS_OPTIONS);
 ga('send', 'pageview');

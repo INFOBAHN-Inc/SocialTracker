@@ -11,28 +11,40 @@ sudo brew install closure-compiler
 npm install
 ```
 
+## サイト設定
+
+src/defines.js を修正
+
+```js
+/** @define {string} */
+var SITE_DOMAIN = 'example.com';
+
+/** @define {string} */
+var TRACKING_ID = 'UA-XXXXXXXX-1';
+
+/** @define {string} */
+var APP_ID = 'APP_ID';
+```
+
+## ビルド
+
+### Grunt でビルド
+
 必要であれば、Gruntfile.js 内の closurePath を修正。
 
 ```js
 closurePath: '/usr/local/opt/closure-compiler/libexec/',
 ```
 
-defines.json を修正
-
-```js
-[
-    "SITE_DOMAIN=\\'example.com\\'",
-    "TRACKING_ID=\\'UA-XXXXXXX-1\\'",
-    "APP_ID=\\'XXXXXXXXXXX\\'"
-]
-```
-
-ビルド
-
 ```shell
 grunt
 ```
 
+### Closure Compiler でビルド
+
+```shell
+java -jar compiler.jar --output_wrapper '(function() {%output%})();' --js src/defines.js --js src/analytics.js --js src/facebook.js --js src/plusone.js --js src/twitter.js --js_output_file tracking.js
+```
 
 ## 要件
 

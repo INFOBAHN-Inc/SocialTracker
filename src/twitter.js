@@ -1,6 +1,6 @@
 /*jslint browser: true, plusplus: true, unparam:true*/
-/*global twttr, ga, unescape, console*/
-twttr = (function (d, s, id) {
+/*global twttr, socialInteractionsTracking, unescape*/
+window.twttr = (function (d, s, id) {
     var t, js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) { return; }
     js = d.createElement(s);
@@ -32,7 +32,7 @@ twttr = (function (d, s, id) {
     }
 
     function track(action, target) {
-        ga('send', 'social', 'twitter', action, target);
+        socialInteractionsTracking('twitter', action, target);
     }
 
     twttr.ready(function (twttr) {

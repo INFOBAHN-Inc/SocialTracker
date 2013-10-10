@@ -22,6 +22,7 @@ module.exports = function (grunt) {
     jsfiles = {
         main: {
             js: [
+                '<%= basedir %>/src/defines.js',
                 '<%= basedir %>/src/analytics.js',
                 '<%= basedir %>/src/facebook.js',
                 '<%= basedir %>/src/plusone.js',
@@ -48,7 +49,7 @@ module.exports = function (grunt) {
             closurePath: '/usr/local/opt/closure-compiler/libexec/',
             jsOutputFile: element.jsOutputFile,
             options: {
-                define: require('./defines.json')
+                'output_wrapper': '(function() {%output%})();'
             }
         };
     });

@@ -1,8 +1,5 @@
 /*jslint browser: true, plusplus: true, unparam:true*/
-/*global ga, FB*/
-
-/** @define {string} */
-var APP_ID = 'APP_ID';
+/*global FB, socialInteractionsTracking*/
 
 (function(d, s, id) {
 
@@ -28,7 +25,7 @@ var APP_ID = 'APP_ID';
     }
 
     function track(action, target) {
-        ga('send', 'social', 'facebook', action, target);
+        socialInteractionsTracking('facebook', action, target);
     }
 
     window.fbAsyncInit = function () {
