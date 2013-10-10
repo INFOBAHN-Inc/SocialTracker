@@ -5,3 +5,11 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', TRACKING_ID, ANALYTICS_OPTIONS);
 ga('send', 'pageview');
+
+function socialInteractionsTracking(network, action, target) {
+    ga('send', 'social', network, action, target);
+}
+
+function socialEventsTracking(category, action, label) {
+    ga('send', 'event', category, action, label);
+}

@@ -33,6 +33,10 @@ window.twttr = (function (d, s, id) {
 
     function track(action, target) {
         socialInteractionsTracking('twitter', action, target);
+
+        if (USE_EVENT) {
+            socialEventsTracking('twitter', action, target);
+        }
     }
 
     twttr.ready(function (twttr) {

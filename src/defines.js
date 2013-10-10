@@ -10,6 +10,5 @@ var TRACKING_ID = 'UA-XXXXXXX-1';
 /** @define {string} */
 var APP_ID = 'XXXXXXXXXXX';
 
-function socialInteractionsTracking(network, action, target) {
-    ga('send', 'social', network, action, target);
-}
+/** @define {boolean} */
+var USE_EVENT = false;

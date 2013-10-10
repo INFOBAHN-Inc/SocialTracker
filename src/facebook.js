@@ -26,6 +26,10 @@
 
     function track(action, target) {
         socialInteractionsTracking('facebook', action, target);
+
+        if (USE_EVENT) {
+            socialEventsTracking('facebook', action, target);
+        }
     }
 
     window.fbAsyncInit = function () {

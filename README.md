@@ -16,8 +16,8 @@ npm install
 src/defines.js を修正
 
 ```js
-/** @define {string} */
-var SITE_DOMAIN = 'example.com';
+var ANALYTICS_OPTIONS =  {'cookieDomain': 'none'};
+// var ANALYTICS_OPTIONS =  'exmaple.com';
 
 /** @define {string} */
 var TRACKING_ID = 'UA-XXXXXXXX-1';
