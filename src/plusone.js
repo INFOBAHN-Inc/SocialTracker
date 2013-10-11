@@ -7,8 +7,34 @@
 (function () {
     'use strict';
 
+    function getElementsByClassName(targetClass) {
+        var foundElements = [],
+            allElements,
+            i = 0,
+            j = 0;
+
+        if (document.getElementsByClassName) {
+            return document.getElementsByClassName(targetClass);
+        }
+
+        if (document.all) {
+            allElements = document.all;
+        } else {
+            allElements = document.getElementsByTagName("*");
+        }
+
+        for (i = 0; i < allElements.length; i++) {
+            if (allElements[i].className === targetClass) {
+                foundElements[j] = allElements[i];
+                j++;
+            }
+        }
+
+        return foundElements;
+    }
+
     var el1 = document.getElementsByTagName('g:plusone'),
-        el2 = document.getElementsByClassName('g-plusone');
+        el2 = getElementsByClassName('g-plusone');
 
     window.gapicallback = function (obj) {
         var action = '+1';
