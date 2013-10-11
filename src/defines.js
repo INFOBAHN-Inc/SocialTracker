@@ -9,5 +9,8 @@ var TRACKING_ID = 'UA-XXXXXXX-1';
 /** @define {string} */
 var APP_ID = 'XXXXXXXXXXX';
 
-/** @define {boolean} */
+/**
+ * Social Interactions と同時に Event Tracking も行う場合は true に
+ * @define {boolean}
+ */
 var USE_EVENT = false;
